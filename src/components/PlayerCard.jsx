@@ -1,5 +1,6 @@
 import ButtonCapacity from "./ButtonCapacity/ButtonCapacity";
 import ProgressBar from "./ProgressBar/ProgressBar";
+import '../components/PlayerCard.css';
 
 function PlayerCard({ player }) {
   return (

@@ -30,7 +30,7 @@ export const fightSlice = createSlice({
   
     hitBack: (state, action) => {
       const { damage, playerId } = action.payload;
-      // Trouver le joueur par son ID et appliquer les dégâts
+      // trouver l joueur et appliquer le dégat en fonction de son id
       const player = state.players.find(p => p.id === playerId);
       if (player) {
         player.pv = Math.max(0, player.pv - damage);
@@ -39,7 +39,7 @@ export const fightSlice = createSlice({
   },
 });
 
-// Export des actions
+
 export const { hitMonster } = fightSlice.actions;
 export const {hitBack} = fightSlice.actions;
 

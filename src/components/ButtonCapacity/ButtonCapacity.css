@@ -1,7 +1,89 @@
+/* Buttons */
 .btn {
-  padding: 0.1em 0.2rem !important ;
+  background: linear-gradient(45deg, #1a1f3c, #2a3457);
+  border: 2px solid #4a90e2;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem !important;
+  color: #5fb8ff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.2),
+              inset 0 0 10px rgba(74, 144, 226, 0.1);
 }
 
-.fa-bomb {
-  color: black;
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(74, 144, 226, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: buttonLight 3s infinite;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 25px rgba(74, 144, 226, 0.4),
+              inset 0 0 15px rgba(74, 144, 226, 0.2);
+  border-color: #5fb8ff;
+  color: #ffffff;
+}
+
+.btn-success {
+  background: linear-gradient(45deg, #1d3b2a, #2a573c);
+  border-color: #4caf50;
+  color: #7dff8e;
+}
+
+
+.btn i {
+  margin: 0 0.5rem;
+  filter: drop-shadow(0 0 2px rgba(95, 184, 255, 0.5));
+}
+
+/* Animation de l'effet lumineux */
+@keyframes buttonLight {
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+/* Animation au clic */
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.3),
+              inset 0 0 5px rgba(74, 144, 226, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem;
+    margin: 0.3rem;
+  }
 }
