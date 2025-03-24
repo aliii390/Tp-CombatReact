@@ -13,7 +13,7 @@ const initialState = {
   monster: {  
     // Notre boss à combattre
     name: "Crypto",
-    pv: 400,
+    pv: 800,
     pvMax: 800
   
   },
